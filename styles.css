@@ -1,0 +1,357 @@
+/* Reset базовые стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.header {
+  background: #ffcc00;
+  color: #222;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #444;
+  outline: none;
+}
+
+.fixed-apply-btn {
+  display: none;
+}
+
+/* Фиксированная кнопка заявки на мобильных */
+@media (max-width: 600px) {
+  .fixed-apply-btn {
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-size: 1.1rem;
+  }
+}
+
+.section {
+  background: #fff;
+  margin-bottom: 30px;
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 8px;
+}
+
+/* Шаги с иконками */
+.steps {
+  list-style: none;
+  color: #555;
+  font-size: 1.1rem;
+  counter-reset: step-counter;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffcc00;
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 28px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 2;
+  position: relative;
+}
+
+.steps li .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffcc00;
+}
+
+/* Требования с галочками */
+.requirements-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #555;
+  margin-left: 0;
+}
+
+.requirements-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.requirements-list li .icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #28a745;
+}
+
+/* FAQ аккордеон */
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  width: 100%;
+  background: #ffcc00;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  background: #e6b800;
+  outline: none;
+}
+
+.faq-answer {
+  padding: 10px 15px;
+  border-left: 4px solid #ffcc00;
+  background: #fff8cc;
+  font-size: 1rem;
+  color: #444;
+  border-radius: 0 5px 5px 5px;
+  margin-top: 5px;
+}
+
+/* Контакты */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Форма */
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.required {
+  color: red;
+  margin-left: 2px;
+}
+
+.optional {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+.input-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 3px;
+}
+
+input {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #ffcc00;
+  outline: none;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-weight: 600;
+  color: green;
+  min-height: 1.2em;
+}
+
+.form-message.error {
+  color: red;
+}
+
+.submit-btn {
+  margin-top: 20px;
+}
+
+/* Футер */
+.footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-links a {
+  margin: 0 8px;
+  display: inline-block;
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  color: #e6b800;
+  outline: none;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .fixed-apply-btn {
+    width: auto;
+    font-size: 1.1rem;
+  }
+
+  .steps li, .requirements-list li {
+    gap: 8px;
+  }
+
+  .steps li .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .requirements-list li .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
